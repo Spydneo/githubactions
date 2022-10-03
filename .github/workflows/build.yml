@@ -18,8 +18,9 @@ jobs:
       - name: install dependencies
         run: poetry install
       - name: Testing
-        run: petry run pytest
-      - run: poetry build #BUILDING
+        run: poetry run pytest
+      - name: Building
+        run: poetry build #BUILDING
       - name: Publish Release  to GH
         uses: softprops/action-gh-release@v1
         with:
