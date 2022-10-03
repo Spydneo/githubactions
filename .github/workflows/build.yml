@@ -16,8 +16,10 @@ jobs:
       - name: Install Poetry
         uses: snok/install-poetry@v1
       - run: poetry build
-      - run: ls ${{ github.workspace }}
-      - name: Release Test
+      - name: Testing
+        run: petry run pytest
+      # - run: ls ${{ github.workspace }}
+      - name: Publish Release  to GH
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/dist/*
