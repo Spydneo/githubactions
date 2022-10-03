@@ -12,3 +12,7 @@ jobs:
         uses: snok/install-poetry@v1
       - run: poetry build
       - run: ls ${{ github.workspace }}
+      - name: Release Test
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ github.workspace }}/dist/*
