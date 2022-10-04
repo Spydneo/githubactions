@@ -19,6 +19,8 @@ Super Jairo
    :maxdepth: 2
    :caption: Contents:
 
+   install
+   example
 
 
 Indices and tables
