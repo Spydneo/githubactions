@@ -66,9 +66,9 @@ def test_get_numerical_features_zero_rows():
 #     # EJERCICIO
 
 
-def test_fail():
+# def test_fail():
 
-    """Test pytest --f."""
+#     """Test pytest --f."""
 
     
-    assert 1 == 2
+#     assert 1 == 2
