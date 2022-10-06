@@ -1,2 +1,3 @@
 # docs/source/requirements.txt
 sphinx-autoapi
+furo
