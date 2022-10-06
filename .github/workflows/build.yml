@@ -33,7 +33,8 @@ jobs:
           name: Tests with reports            # Name of the check run which will be created
           path: jest-junit.xml    # Path to test results
           reporter: java-junit        # Format of test results
-      - uses: devmasx/coverage-check-action@v1.2.0
+      - name: Coverage Report
+        uses: devmasx/coverage-check-action@v1.2.0
         with:
           type: lcov
           result_path: coverage.lcov
