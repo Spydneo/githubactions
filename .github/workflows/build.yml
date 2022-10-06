@@ -1,10 +1,10 @@
 name: Building
 run-name: ${{ github.actor }} is testing Building yml
-# on: [push] #Cuando se ejecuta
-on:
-  push: #Esto se ejecuta solo cuando hay un tag
-    tags:
-      - "v*.*.*"
+on: [push] #Cuando se ejecuta
+# on:
+#   push: #Esto se ejecuta solo cuando hay un tag
+#     tags:
+#       - "v*.*.*"
 jobs:
   building: 
     runs-on: ubuntu-latest
@@ -18,10 +18,26 @@ jobs:
       - name: install dependencies
         run: poetry install
       - name: Testing
-        run: poetry run pytest
+        run: poetry run pytest --junitxml=jest-junit.xml
       - name: Building
         run: poetry build #BUILDING
       - name: Publish Release  to GH
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/dist/*
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: reports/jest-*.xml    # Path to test results
+          reporter: jest-junit        # Format of test results
+
+      
+      
+      # - uses: actions/upload-artifact@v2  # upload test results
+      #   if: success() || failure()        # run this step even if previous step failed
+      #   with:
+      #     name: test-results
+      #     path: jest-junit.xml

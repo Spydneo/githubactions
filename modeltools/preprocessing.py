@@ -34,3 +34,26 @@ def test_funtion_to_autoapi_rtd(x, y):
     :return: La suma de un valor entero
     """
     return x+y
+
+def test_autodoscstring_and_test(x, y):
+    """_summary_
+    Test no terminado
+    Args:
+        x (_type_): _description_
+        y (_type_): _description_
+
+    Returns:
+        _type_: _description_
+
+
+    Ejemplo/Test:
+    =============
+
+    >>> from modeltools.preprocessing import test_autodoscstring_and_test
+    >>> 
+    >>> 
+    >>> 
+
+
+    """
+    return x-y

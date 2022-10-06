@@ -64,3 +64,11 @@ def test_get_numerical_features_zero_rows():
 #     """Este test comprueba que funciona correctamente con número complejos."""
 
 #     # EJERCICIO
+
+
+def test_fail():
+
+    """Test pytest --f."""
+
+    
+    assert 1 == 2
