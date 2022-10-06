@@ -1,3 +1,2 @@
 # docs/source/requirements.txt
-
-autoapi
+sphinx-autoapi
