@@ -33,7 +33,18 @@ jobs:
           name: Tests with reports            # Name of the check run which will be created
           path: jest-junit.xml    # Path to test results
           reporter: java-junit        # Format of test results
-
+      - name: Code Coverage Report
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: htmlcov/index.html
+          badge: true
+          fail_below_min: true
+          format: markdown
+          hide_branch_rate: false
+          hide_complexity: true
+          indicators: true
+          output: both
+          thresholds: '60 80'
       
       
       # - uses: actions/upload-artifact@v2  # upload test results
