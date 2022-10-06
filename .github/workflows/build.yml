@@ -32,7 +32,7 @@ jobs:
         with:
           name: Tests with reports            # Name of the check run which will be created
           path: jest-junit.xml    # Path to test results
-          reporter: jest-junit        # Format of test results
+          reporter: java-junit        # Format of test results
 
       
       
